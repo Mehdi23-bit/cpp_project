@@ -1,8 +1,10 @@
 #ifndef SHAPE_H
 #define SHAPE_H
+#include <algorithm>
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
+
 #include <cmath>
 
 const double EPSIL_ZERO = 1e-10;
@@ -17,38 +19,38 @@ class Segment
 {
 public:
     S2d base;
-    double angle; 
-    double length;
-    S2d end;
+    double angle;
+    double longueur;
+    S2d fin;
+    unsigned id;
+    Segment(S2d base, double angle, double longueur);
 
-    Segment(S2d base, double angle, double length);
-
-    double angleDifference(const Segment &other) const;
-    bool overlapsWith(const Segment &other) const;
-    bool intersectsWith(const Segment &other) const;
+    double differenceAngle(const Segment &autre) const;
+    bool chevaucheAvec(const Segment &autre) const;
+    bool intersecteAvec(const Segment &autre) const;
 
 private:
-    void calculateEndPoint();
+    void calculerPointFinal();
 };
 
-class Circle
+class Cercle
 {
 public:
-    S2d center;
-    double radius;
+    S2d centre;
+    double rayon;
 
-    Circle(S2d center, double radius);
+    Cercle(S2d centre, double rayon);
 };
 
-class Square
+class Carre
 {
 public:
-    S2d center;
-    double sideLength;
+    S2d centre;
+    double cote;
 
-    Square(S2d center, double sideLength);
+    Carre(S2d centre, double cote);
 };
 
-double normalizeAngle(double angle);
+double normaliserAngle(double angle);
 
-#endif 
+#endif
