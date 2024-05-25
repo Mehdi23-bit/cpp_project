@@ -20,4 +20,4 @@ private:
     bool parseLine(const std::string &line);
 };
 
-#endif // SIMULATION_H
+#endif

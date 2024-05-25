@@ -2,6 +2,8 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "lifeform.h"
+#include "shape.h"
 
 Simulation::Simulation() {}
 

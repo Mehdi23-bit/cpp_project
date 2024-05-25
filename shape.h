@@ -17,7 +17,7 @@ class Segment
 {
 public:
     S2d base;
-    double angle; // angle in radians
+    double angle; 
     double length;
     S2d end;
 
@@ -51,4 +51,4 @@ public:
 
 double normalizeAngle(double angle);
 
-#endif // SHAPE_H
+#endif 
